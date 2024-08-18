@@ -25,8 +25,9 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/news/:id',
-        element: <PrivateRoute><News></News></PrivateRoute>
+        path: '/news/:_id',
+        element: <PrivateRoute><News></News></PrivateRoute>,
+        loader: () => fetch('/news.json')
       }
     ],
   },
